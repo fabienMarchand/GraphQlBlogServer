@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv').config();
+const dotenv = require("dotenv");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -11,6 +11,8 @@ const graphqlResolver = require('./graphql/resolvers');
 const auth = require('./middleware/auth');
 
 const app = express();
+
+dotenv.config();
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
